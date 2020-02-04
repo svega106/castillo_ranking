@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>159364915144-b0no0fivq8e5ln5f1lpuabatv4nbh956.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.159364915144-b0no0fivq8e5ln5f1lpuabatv4nbh956</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>159364915144-dnnhck0e3f50e83l1groac2ncu44gvts.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBZAv823K3Wc_sYL-_RrFR9ctvc0lQiBfM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>159364915144</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.castilloRanking</string>
+	<key>PROJECT_ID</key>
+	<string>sistema-de-retos</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sistema-de-retos.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:159364915144:ios:edb742a9d25e356940aafd</string>
+	<key>DATABASE_URL</key>
+	<string>https://sistema-de-retos.firebaseio.com</string>
+</dict>
+</plist>

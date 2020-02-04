@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "159364915144",
+    "firebase_url": "https://sistema-de-retos.firebaseio.com",
+    "project_id": "sistema-de-retos",
+    "storage_bucket": "sistema-de-retos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159364915144:android:6a3db786dfdac79040aafd",
+        "android_client_info": {
+          "package_name": "com.holi.pag_andres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159364915144-be6oiruba1q48e5evuip30o7u7b08pun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRtihK2vzw4ozMed_f3BjvPZzYNHSRIFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159364915144-be6oiruba1q48e5evuip30o7u7b08pun.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "159364915144-b0no0fivq8e5ln5f1lpuabatv4nbh956.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.castilloRanking"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159364915144:android:60167286058945fc40aafd",
+        "android_client_info": {
+          "package_name": "com.svcr.castillo_ranking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159364915144-be6oiruba1q48e5evuip30o7u7b08pun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRtihK2vzw4ozMed_f3BjvPZzYNHSRIFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159364915144-be6oiruba1q48e5evuip30o7u7b08pun.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "159364915144-b0no0fivq8e5ln5f1lpuabatv4nbh956.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.castilloRanking"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
