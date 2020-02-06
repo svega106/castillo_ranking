@@ -1,4 +1,3 @@
-import 'package:castillo_ranking/Screens/Home/settings.dart';
 import 'package:flutter/material.dart';
 
 Widget drawerTab(String text, IconData icon, BuildContext context,String routeName) {

@@ -293,7 +293,6 @@ class _SignUpState extends State<SignUp> {
                                           DatabaseService(uid: result.uid);
                                       _players.updateUserData(
                                           displayName, socio, 0, false);
-                                      print(displayName);
                                       if (result == null) {
                                         setState(() {
                                           loading = false;

@@ -2,7 +2,6 @@ import 'package:castillo_ranking/Models/drawerTab.dart';
 import 'package:castillo_ranking/Models/match_results.dart';
 import 'package:castillo_ranking/Models/player.dart';
 import 'package:castillo_ranking/Models/user.dart';
-import 'package:castillo_ranking/Screens/Home/settings.dart';
 import 'package:castillo_ranking/Services/auth.dart';
 import 'package:castillo_ranking/Services/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -40,20 +39,20 @@ class _HomeState extends State<Home> {
     double screenWidth = MediaQuery.of(context).size.width - 60;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    print(user.displayName);
     return StreamProvider<List<Players>>.value(
       value: DatabaseService().jugadores,
       child: Scaffold(
         drawer: Drawer(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(
-                    right: 20.0, left: 20.0, bottom: 0.0, top: 30.0),
+                    right: 20.0, left: 20.0, bottom: 0.0, top: 50.0),
                 child: Icon(
                   Icons.person,
-                  size: 100.0,
+                  size: 50.0,
                   color: Colors.green,
                 ),
               ),
@@ -75,11 +74,15 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Divider(
-                thickness: 0.5,color: Colors.lightGreen,indent: 16.0, endIndent: 16.0,
+                thickness: 0.5,
+                color: Colors.lightGreen,
+                indent: 16.0,
+                endIndent: 16.0,
               ),
-              drawerTab('Inicio', Icons.home, context,'Home'),
-              drawerTab('Ranking Global', Icons.call_missed_outgoing, context,'Home'),
-              drawerTab('Llaves de Torneo', Icons.vpn_key, context,'Home')
+              drawerTab('Inicio', Icons.home, context, 'Home'),
+              drawerTab('Ranking Global', Icons.call_missed_outgoing, context,
+                  'Home'),
+              drawerTab('Llaves de Torneo', Icons.vpn_key, context, 'Settings')
             ],
           ),
         ),
@@ -98,43 +101,37 @@ class _HomeState extends State<Home> {
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.lightGreen, Colors.green],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter),
+            color: Colors.lightGreen,
           ),
           child: Padding(
             padding: const EdgeInsets.only(bottom: 30.0),
             child: Column(
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20.0),
-                  child: Container(
-                    height: screenHeight / 10.0,
-                    width: screenWidth,
-                    child: Text(
-                      'Marcadores\nRecientes',
-                      style: TextStyle(fontSize: 30.0, color: Colors.white),
-                      textAlign: TextAlign.left,
-                    ),
+                Container(
+                  height: screenHeight / 10.0,
+                  width: screenWidth,
+                  child: Text(
+                    'Marcadores\nRecientes',
+                    style: TextStyle(fontSize: 30.0, color: Colors.white),
+                    textAlign: TextAlign.left,
                   ),
                 ),
-                Container(
-                  height: screenHeight / 5,
+                Expanded(
                   child: PageView(
-                    controller: PageController(viewportFraction: 0.8),
+                    controller: PageController(viewportFraction: 1),
                     scrollDirection: Axis.horizontal,
                     pageSnapping: true,
                     children: <Widget>[
-                      matchResults(screenWidth),
-                      matchResults(screenWidth),
-                      matchResults(screenWidth),
+                      //TODO Meter los nombres de los jugadores sacados de la base de datos
+                      matchResults(),
+                      matchResults(),
                     ],
                   ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 30.0, vertical: 30.0),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Expanded(
                   child: Container(
                     width: screenWidth,
                     height: screenHeight / 10,

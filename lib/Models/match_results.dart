@@ -1,68 +1,78 @@
 import 'package:flutter/material.dart';
 
-Widget matchResults(double screenWidth) {
-  return Container(
-    margin: const EdgeInsets.symmetric(horizontal: 10.0),
-    width: screenWidth,
-    decoration: BoxDecoration(
-        color: Colors.white, borderRadius: BorderRadius.circular(15.0)),
-    child: Center(
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    width: 10.0,
-                    margin: EdgeInsets.only(
-                        right: 20.0, left: 20.0, top: 10.0, bottom: 10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.circular(15.0)),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    width: 10.0,
-                    margin: EdgeInsets.only(
-                        right: 20.0, left: 20.0, top: 10.0, bottom: 10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.circular(15.0)),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    width: 10.0,
-                    margin: EdgeInsets.only(
-                        right: 20.0, left: 20.0, top: 10.0, bottom: 10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.circular(15.0)),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    width: 10.0,
-                    margin: EdgeInsets.only(
-                        right: 20.0, left: 20.0, top: 10.0, bottom: 10.0),
-                    decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.circular(15.0)),
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+Widget matchResults() {
+  return Column(
+    children: <Widget>[
+      Expanded(
+        child: Divider(
+          indent: 30.0,
+          endIndent: 30.0,
+          height: 0.5,
+          thickness: 3,
+          color: Colors.white,
+        ),
       ),
-    ),
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(right: 30.0, left: 30.0),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    'Sebastian Vega',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  child: Text(
+                    '6  4  3',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(right: 30.0, left: 30.0),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  child: Text(
+                    'Sebastian Vega',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  child: Text(
+                    '6  4  3',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Expanded(
+        child: Divider(
+          indent: 30.0,
+          endIndent: 30.0,
+          height: 0.5,
+          thickness: 3,
+          color: Colors.white,
+        ),
+      ),
+    ],
   );
 }

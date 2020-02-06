@@ -38,7 +38,6 @@ class _WrapperState extends State<Wrapper> {
       
       return Authenticate();
     } else {
-      print(_user.displayName);
       if (_admin) {
         return AdminHome();
       } else {
