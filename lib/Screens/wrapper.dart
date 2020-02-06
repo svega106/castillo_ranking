@@ -18,31 +18,20 @@ class _WrapperState extends State<Wrapper> {
 
     final jugadores = Provider.of<QuerySnapshot>(context);
 
-    bool _admin = false;
-
-    for (var doc in jugadores.documents) {
-      if (_user != null) {
+    //Return home or signin() if sign or not
+    if (_user != null) {
+      for (var doc in jugadores.documents) {
         if (doc.documentID == _user.uid) {
           if (doc.data['Admin'] == true) {
-            setState(() => _admin = true);
+            return AdminHome();
           } else {
-            setState(() => _admin = false);
+            return Home();
           }
         }
       }
-    }
-
-    //Return home or signin() if sign or not
-
-    if (_user == null) {
-      
-      return Authenticate();
     } else {
-      if (_admin) {
-        return AdminHome();
-      } else {
-        return Home();
-      }
+      return Authenticate();
     }
+    return null;
   }
 }
