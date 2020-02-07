@@ -136,7 +136,7 @@ class _HomeState extends State<Home> {
                     width: screenWidth,
                     height: screenHeight / 10,
                     child: Text(
-                      'Próximos\nPartidos',
+                      'Proximos\nPartidos',
                       style: TextStyle(fontSize: 30.0, color: Colors.white),
                       textAlign: TextAlign.left,
                     ),
