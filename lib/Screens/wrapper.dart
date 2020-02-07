@@ -32,6 +32,5 @@ class _WrapperState extends State<Wrapper> {
     } else {
       return Authenticate();
     }
-    return null;
   }
 }
