@@ -9,8 +9,9 @@ class DatabaseService {
   final CollectionReference playerCollection =
       Firestore.instance.collection('Jugadores');
 
-  Future updateUserData(String name, String socio, int pos, bool admin) async {
+  Future updateUserData(String id,String name, String socio, int pos, bool admin) async {
     return await playerCollection.document(uid).setData({
+      'Id': id,
       'Nombre': name,
       'Numero de Socio': socio,
       'Posicion en el Ranking': pos,
@@ -22,6 +23,7 @@ class DatabaseService {
   List<Players> _playerListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
       return Players(
+        id: doc.documentID,
         displayName: doc.data['Nombre'] ?? '',
         socio: doc.data['Numero de Socio'] ?? '',
         position: doc.data['Posicion en el ranking'] ?? '0',
@@ -30,11 +32,9 @@ class DatabaseService {
     }).toList();
   }
 
-  Stream<List<Players>> get jugadores {
+  Stream<List<Players>> get players {
     return playerCollection.snapshots().map(_playerListFromSnapshot);
   }
 
-  Stream<QuerySnapshot> get players {
-    return playerCollection.snapshots();
-  }
+
 }

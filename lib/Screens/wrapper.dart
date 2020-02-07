@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:castillo_ranking/Models/player.dart';
 import 'package:castillo_ranking/Screens/Authenticate/authenticate.dart';
 import 'package:castillo_ranking/Screens/Home/admin_home.dart';
 import 'package:castillo_ranking/Screens/Home/home.dart';
@@ -16,18 +16,28 @@ class _WrapperState extends State<Wrapper> {
   Widget build(BuildContext context) {
     final _user = Provider.of<User>(context);
 
-    final jugadores = Provider.of<QuerySnapshot>(context);
+    final players = Provider.of<List<Players>>(context) ?? [];
 
-    //Return home or signin() if sign or not
+    bool _admin = false;
+
+    //Return home or signin() if sign or not\
     if (_user != null) {
-      for (var doc in jugadores.documents) {
-        if (doc.documentID == _user.uid) {
-          if (doc.data['Admin'] == true) {
-            return AdminHome();
+      players.forEach((f) {
+        if (f.id == _user.uid) {
+          if (f.admin) {
+            setState(() => _admin = true);
           } else {
-            return Home();
+            setState(() => _admin = false);
           }
         }
+      });
+    }
+    
+    if (_user != null) {
+      if (_admin) {
+        return AdminHome();
+      } else {
+        return Home();
       }
     } else {
       return Authenticate();
