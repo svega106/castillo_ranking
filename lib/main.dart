@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<Players>>.value(
+    return StreamProvider<List<Player>>.value(
       value: DatabaseService().players,
           child: StreamProvider<User>.value(
         value: AuthService().user,

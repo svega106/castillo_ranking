@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-Widget drawerTab(String text, IconData icon, BuildContext context,String routeName) {
+Widget drawerTab(
+    String text, IconData icon, BuildContext context, String routeName) {
   return GestureDetector(
     onTap: () {
       Navigator.pop(context);
-      Navigator.pushReplacementNamed(context, routeName);
+      if (routeName == 'Home') {
+        Navigator.pushReplacementNamed(context, routeName);
+      } else {
+        Navigator.pushNamed(context, routeName);
+      }
     },
     child: Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
@@ -16,7 +21,7 @@ Widget drawerTab(String text, IconData icon, BuildContext context,String routeNa
           ),
           Text(
             text,
-            style: TextStyle(color: Colors.lightGreen,fontSize: 20.0),
+            style: TextStyle(color: Colors.lightGreen, fontSize: 20.0),
           ),
         ],
       ),

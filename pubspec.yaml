@@ -22,14 +22,15 @@ dependencies:
   #Dependency for Firebase
   firebase_core: ^0.4.0+9
   firebase_analytics: ^5.0.2
-  #Dependency for Cloud Firestore
   firebase_auth: ^0.14.0+5
   cloud_firestore: ^0.12.9+5
+  firebase_performance: ^0.3.1+5
   #Provider Package
   provider: ^4.0.2
   #Spinner loading package
   flutter_spinkit: "^4.1.1"
-  firebase_performance: ^0.3.1+5
+  #Icon Pack
+  material_design_icons_flutter: ^3.4.4895
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,11 +1,9 @@
-
-class Players {
+class Player {
   final String id;
   final String displayName;
   final String socio;
-  final String position;
+  final int position;
   final bool admin;
 
-  Players({this.id,this.displayName,this.socio,this.position,this.admin});
-
+  Player({this.id, this.displayName, this.socio, this.position, this.admin});
 }

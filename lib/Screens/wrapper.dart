@@ -16,7 +16,7 @@ class _WrapperState extends State<Wrapper> {
   Widget build(BuildContext context) {
     final _user = Provider.of<User>(context);
 
-    final players = Provider.of<List<Players>>(context) ?? [];
+    final players = Provider.of<List<Player>>(context) ?? [];
 
     bool _admin = false;
 
