@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
-class GlobalRanking extends StatefulWidget {
+class RankingCatC extends StatefulWidget {
   @override
-  _GlobalRankingState createState() => _GlobalRankingState();
+  _RankingCatCState createState() => _RankingCatCState();
 }
 
-class _GlobalRankingState extends State<GlobalRanking> {
+class _RankingCatCState extends State<RankingCatC> {
 
   //Variables
   @override

@@ -1,5 +1,5 @@
 import 'package:castillo_ranking/Screens/Home/home.dart';
-import 'package:castillo_ranking/Screens/Pages/Ranking/global_ranking.dart';
+import 'package:castillo_ranking/Screens/Pages/Ranking/ranking_wrapper.dart';
 import 'package:castillo_ranking/Screens/Pages/settings.dart';
 import 'package:castillo_ranking/Screens/wrapper.dart';
 import 'package:castillo_ranking/Services/auth.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           routes: {
             'Home': (context) => Home(),
             'Settings': (context) => Settings(),
-            'Ranking': (context) => GlobalRanking(),
+            'Ranking': (context) => RankingWrapper(),
             
           },
           home: Wrapper(),
