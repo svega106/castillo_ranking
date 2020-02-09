@@ -11,8 +11,8 @@ class GlobalRanking extends StatefulWidget {
 }
 
 class _GlobalRankingState extends State<GlobalRanking> {
-  //Variables
 
+  //Variables
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User>(context);
