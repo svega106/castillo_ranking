@@ -7,3 +7,4 @@ class Player {
 
   Player({this.id, this.displayName, this.socio, this.position, this.admin});
 }
+

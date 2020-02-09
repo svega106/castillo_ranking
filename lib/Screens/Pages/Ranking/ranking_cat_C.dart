@@ -30,7 +30,7 @@ class _RankingCatCState extends State<RankingCatC> {
         title: Text(
           'Categoria C',
           style: TextStyle(color: Colors.white, fontSize: 30.0),
-        ),
+        ),actions: <Widget>[IconButton(icon: Icon(Icons.refresh,color: Colors.white), onPressed: null)],
         backgroundColor: Colors.lightGreen,
       ),
       bottomNavigationBar: BottomNavigationBar(
