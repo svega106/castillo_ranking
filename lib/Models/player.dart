@@ -1,4 +1,5 @@
 class Player {
+  
   final String id;
   final String displayName;
   final String socio;

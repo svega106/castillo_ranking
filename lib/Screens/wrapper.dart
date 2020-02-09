@@ -15,11 +15,16 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    
     final _user = Provider.of<User>(context);
     final userData = Provider.of<Player>(context);
+    final player = Provider.of<List<Player>>(context);
 
-    if (_user != null) {
+    print(_user);
+    print(_user.uid);
+    print(player);
+    print(userData);
+
+    if (_user != null) {  
       if (userData.admin) {
         return AdminHome();
       } else {

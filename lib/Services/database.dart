@@ -37,13 +37,13 @@ class DatabaseService {
   Player _playerDataFromSnapshot(DocumentSnapshot snapshot) {
     return Player(
         id: uid,
-        displayName: snapshot.data['Nombre'] ?? '',
-        socio: snapshot.data['Numero de Socio'] ?? '',
-        position: snapshot.data['Posicion en el ranking'] ?? 0,
-        admin: snapshot.data['Admin'] ?? false);
+        displayName: snapshot.data['Nombre'],
+        socio: snapshot.data['Numero de Socio'],
+        position: snapshot.data['Posicion en el ranking'],
+        admin: snapshot.data['Admin']);
   }
 
-  Stream<List<Player>> get players {
+  Stream<List<Player>> get playerList {
     return playerCollection.snapshots().map(_playerListFromSnapshot);
   }
 
