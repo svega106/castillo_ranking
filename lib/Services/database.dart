@@ -9,8 +9,7 @@ class DatabaseService {
   final CollectionReference playerCollection =
       Firestore.instance.collection('Jugadores');
 
-  Future updateUserData(
-      String name, String socio, int pos, bool admin) async {
+  Future updateUserData(String name, String socio, int pos, bool admin) async {
     return await playerCollection.document(uid).setData({
       'Nombre': name,
       'Numero de Socio': socio,
