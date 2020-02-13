@@ -3,11 +3,9 @@ import 'package:castillo_ranking/Screens/Pages/Ranking/ranking_wrapper.dart';
 import 'package:castillo_ranking/Screens/Pages/settings.dart';
 import 'package:castillo_ranking/Screens/wrapper.dart';
 import 'package:castillo_ranking/Services/auth.dart';
-import 'package:castillo_ranking/Services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:castillo_ranking/Models/user.dart';
-import 'Models/player.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,6 +1,5 @@
 import 'package:castillo_ranking/Models/player.dart';
 import 'package:castillo_ranking/Models/player_tile.dart';
-import 'package:castillo_ranking/Models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +14,6 @@ class _RankingCatCState extends State<RankingCatC> {
   //Variables
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<User>(context);
     final players = Provider.of<List<Player>>(context);
 
     //Initiating the variables
