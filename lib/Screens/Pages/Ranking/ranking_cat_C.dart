@@ -19,11 +19,6 @@ class _RankingCatCState extends State<RankingCatC> {
     final players = Provider.of<List<Player>>(context);
 
     //Initiating the variables
-    players.forEach(
-      (player) {
-        if (player.id == user.uid) {}
-      },
-    );
 
     return Scaffold(
       appBar: AppBar(

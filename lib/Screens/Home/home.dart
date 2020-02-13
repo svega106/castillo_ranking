@@ -3,7 +3,6 @@ import 'package:castillo_ranking/Models/match_results.dart';
 import 'package:castillo_ranking/Models/player.dart';
 import 'package:castillo_ranking/Models/user.dart';
 import 'package:castillo_ranking/Services/auth.dart';
-import 'package:castillo_ranking/Services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +23,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final _user = Provider.of<User>(context);
+    final userData = Provider.of<Player>(context);
     
 
     setState(() => email = _user.email);
@@ -31,12 +31,6 @@ class _HomeState extends State<Home> {
     double screenWidth = MediaQuery.of(context).size.width - 60;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    return StreamBuilder<Player>(
-        stream: DatabaseService(uid: _user.uid).userData,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            Player userData = snapshot.data;
-          
           return Scaffold(
             drawer: Drawer(
               child: Column(
@@ -153,6 +147,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           );
-        }});
-  }
+        }
+  
 }

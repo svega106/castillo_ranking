@@ -11,25 +11,24 @@ import 'Models/player.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<Player>>.value(
-      value: DatabaseService().playerList,
-          child: StreamProvider<User>.value(
-        value: AuthService().user,
-        child: StreamProvider<Player>.value(
-          value: DatabaseService().userData,
-          child: MaterialApp(
-            home: Wrapper(),
-            routes: {
-              'Home': (context) => Home(),
-              'Settings': (context) => Settings(),
-              'Ranking': (context) => RankingWrapper(),
-            },
-          ),
-        ),
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        home: Auth(),
+        routes: {
+          'Home': (context) => Home(),
+          'Settings': (context) => Settings(),
+          'Ranking': (context) => RankingWrapper(),
+        },
       ),
     );
   }

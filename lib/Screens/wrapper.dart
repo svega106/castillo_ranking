@@ -7,31 +7,45 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:castillo_ranking/Models/user.dart';
 
-class Wrapper extends StatefulWidget {
-  @override
-  _WrapperState createState() => _WrapperState();
-}
-
-class _WrapperState extends State<Wrapper> {
+class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _user = Provider.of<User>(context);
-    final userData = Provider.of<Player>(context);
-    final player = Provider.of<List<Player>>(context);
 
-    print(_user);
-    print(_user.uid);
-    print(player);
-    print(userData);
-
-    if (_user != null) {  
-      if (userData.admin) {
-        return AdminHome();
-      } else {
-        return Home();
-      }
+    if (_user != null) {
+      return Mid();
     } else {
       return Authenticate();
+    }
+  }
+}
+
+class Mid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final _user = Provider.of<User>(context);
+
+    return StreamProvider<Player>.value(
+      value: DatabaseService(uid: _user.uid).userData,
+      child: Wrapper(),
+    );
+  }
+}
+
+class Wrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final userData = Provider.of<Player>(context);
+
+    //print(_user);
+    //print(_user.uid);
+    //print(player);
+    print(userData.admin);
+
+    if (userData.admin) {
+      return AdminHome();
+    } else {
+      return Home();
     }
   }
 }

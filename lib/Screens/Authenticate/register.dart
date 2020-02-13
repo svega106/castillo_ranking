@@ -288,10 +288,10 @@ class _SignUpState extends State<SignUp> {
                                       setState(() => loading = true);
                                       dynamic result = await _auth
                                           .registerWithEmailAndPassword(
-                                               email, password);
+                                              email, password);
                                       DatabaseService _players =
                                           DatabaseService(uid: result.uid);
-                                      _players.updateUserData(result.uid,
+                                      _players.updateUserData(
                                           displayName, socio, 0, false);
                                       if (result == null) {
                                         setState(() {
