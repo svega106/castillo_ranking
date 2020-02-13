@@ -19,18 +19,13 @@ class _RankingCatCState extends State<RankingCatC> {
     final players = Provider.of<List<Player>>(context);
 
     //Initiating the variables
-    players.forEach(
-      (player) {
-        if (player.id == user.uid) {}
-      },
-    );
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Categoria C',
           style: TextStyle(color: Colors.white, fontSize: 30.0),
-        ),
+        ),actions: <Widget>[IconButton(icon: Icon(Icons.refresh,color: Colors.white), onPressed: null)],
         backgroundColor: Colors.lightGreen,
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -1,6 +1,5 @@
 import 'package:castillo_ranking/Models/player.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class PlayerTile extends StatelessWidget {
   //Variables

@@ -30,9 +30,24 @@ class DatabaseService {
     }).toList();
   }
 
-  Stream<List<Player>> get players {
+  //User Data from snapshot
+  Player _playerDataFromSnapshot(DocumentSnapshot snapshot) {
+    return Player(
+        displayName: snapshot.data['Nombre'],
+        socio: snapshot.data['Numero de Socio'],
+        position: snapshot.data['Posicion en el ranking'],
+        admin: snapshot.data['Admin']);
+  }
+
+  Stream<List<Player>> get playerList {
     return playerCollection.snapshots().map(_playerListFromSnapshot);
   }
 
-
+  //Get user doc
+  Stream<Player> get userData {
+    return playerCollection
+        .document(uid)
+        .snapshots()
+        .map(_playerDataFromSnapshot);
+  }
 }

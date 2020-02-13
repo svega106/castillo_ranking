@@ -7,7 +7,6 @@ import 'package:castillo_ranking/Services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:castillo_ranking/Models/user.dart';
-
 import 'Models/player.dart';
 
 void main() => runApp(MyApp());
@@ -15,19 +14,15 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<Player>>.value(
-      value: DatabaseService().players,
-          child: StreamProvider<User>.value(
-        value: AuthService().user,
-        child: MaterialApp(
-          routes: {
-            'Home': (context) => Home(),
-            'Settings': (context) => Settings(),
-            'Ranking': (context) => RankingWrapper(),
-            
-          },
-          home: Wrapper(),
-        ),
+    return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        home: Auth(),
+        routes: {
+          'Home': (context) => Home(),
+          'Settings': (context) => Settings(),
+          'Ranking': (context) => RankingWrapper(),
+        },
       ),
     );
   }

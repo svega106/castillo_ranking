@@ -2,45 +2,50 @@ import 'package:castillo_ranking/Models/player.dart';
 import 'package:castillo_ranking/Screens/Authenticate/authenticate.dart';
 import 'package:castillo_ranking/Screens/Home/admin_home.dart';
 import 'package:castillo_ranking/Screens/Home/home.dart';
+import 'package:castillo_ranking/Services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:castillo_ranking/Models/user.dart';
 
-class Wrapper extends StatefulWidget {
-  @override
-  _WrapperState createState() => _WrapperState();
-}
-
-class _WrapperState extends State<Wrapper> {
+class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _user = Provider.of<User>(context);
 
-    final players = Provider.of<List<Player>>(context) ?? [];
-
-    bool _admin = false;
-
-    //Return home or signin() if sign or not\
     if (_user != null) {
-      players.forEach((f) {
-        if (f.id == _user.uid) {
-          if (f.admin) {
-            setState(() => _admin = true);
-          } else {
-            setState(() => _admin = false);
-          }
-        }
-      });
-    }
-    
-    if (_user != null) {
-      if (_admin) {
-        return AdminHome();
-      } else {
-        return Home();
-      }
+      return Mid();
     } else {
       return Authenticate();
+    }
+  }
+}
+
+class Mid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final _user = Provider.of<User>(context);
+
+    return StreamProvider<Player>.value(
+      value: DatabaseService(uid: _user.uid).userData,
+      child: Wrapper(),
+    );
+  }
+}
+
+class Wrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final userData = Provider.of<Player>(context);
+
+    //print(_user);
+    //print(_user.uid);
+    //print(player);
+    print(userData.admin);
+
+    if (userData.admin) {
+      return AdminHome();
+    } else {
+      return Home();
     }
   }
 }
