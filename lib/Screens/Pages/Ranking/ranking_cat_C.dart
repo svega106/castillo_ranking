@@ -14,6 +14,7 @@ class _RankingCatCState extends State<RankingCatC> {
   //Variables
   @override
   Widget build(BuildContext context) {
+
     final players = Provider.of<List<Player>>(context);
 
     //Initiating the variables

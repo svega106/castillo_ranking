@@ -37,13 +37,8 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final userData = Provider.of<Player>(context);
 
-    //print(_user);
-    //print(_user.uid);
-    //print(player);
-    print(userData.admin);
-
     if (userData.admin) {
-      return AdminHome();
+      return  AdminHome();
     } else {
       return Home();
     }
